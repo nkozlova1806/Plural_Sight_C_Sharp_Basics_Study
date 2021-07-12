@@ -7,12 +7,13 @@ namespace PS_C_Sharp_Basic
         static void Main(string[] args)
         {
             var blocks = new BlocksAndStatements();
-            blocks.BlocksAndStatementsMethod();
+            //blocks.BlocksAndStatementsMethod();
 
-            var arrays = new BlocksAndStatements();
-            arrays.CreatingArrays();
-
+            //blocks.CreatingArrays();
             
+            //blocks.LoopingThruArray();
+
+            blocks.LoopingThruTheList();
         }
     }
 }

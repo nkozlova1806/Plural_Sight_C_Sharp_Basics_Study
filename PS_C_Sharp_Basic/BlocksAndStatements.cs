@@ -7,6 +7,7 @@ namespace PS_C_Sharp_Basic
 {
     class BlocksAndStatements
     {
+        #region Blocks and Statements
         //public int BlocksAndStatementsMethod()
         public void BlocksAndStatementsMethod()
         {
@@ -31,7 +32,9 @@ namespace PS_C_Sharp_Basic
             }
 
         }
+        #endregion
 
+        #region CreatingArray
         public void CreatingArrays()
         {
             var array1 = new int[5];
@@ -63,7 +66,75 @@ namespace PS_C_Sharp_Basic
             {
                 newArray.Add(item.ToString());
             }
-            
         }
+        #endregion
+
+        #region LoopingThruArray
+        public void LoopingThruArray()
+        {
+            var array3 = new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
+            foreach (var i in array3)
+            {
+                Console.WriteLine(i);
+            }
+
+            for (int i = array3.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(array3[i]);
+            }
+
+            for (int i = 0; i <= array3.Length - 1; i++)
+            {
+                var currentValue = array3[array3.Length - i - 1];
+                Console.WriteLine(currentValue);
+            }
+
+            int sum = 0;
+            foreach (var item in array3)
+            {
+                sum += item;
+            }
+            Console.WriteLine($"Sum is " + sum);
+        }
+        #endregion
+
+        #region Looping Through the List
+        public void LoopingThruTheList()
+        {
+            var arrayList = new List<int>();
+            arrayList.Add(21);
+            arrayList.Add(22);
+            arrayList.Add(23);
+            arrayList.Add(24);
+            arrayList.Add(25);
+            arrayList.Add(26);
+            arrayList.Add(27);
+            arrayList.Add(28);
+            arrayList.Add(29);
+
+            foreach (var item in arrayList)
+            {
+                Console.WriteLine(item);
+            }
+
+            for (int i = arrayList.Count - 1; i >= 0; i--)
+            {
+                Console.WriteLine(arrayList[i]);
+            }
+
+            for (int i = 0; i <= arrayList.Count - 1; i++)
+            {
+                int currentValue = arrayList[arrayList.Count - i - 1];
+                Console.WriteLine(currentValue);
+            }
+
+            int sum = 0;
+            foreach (var item in arrayList)
+            {
+                sum += item;
+            }
+            Console.WriteLine($"Sum is " + sum);
+        }
+        #endregion
     }
 }
