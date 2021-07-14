@@ -70,25 +70,30 @@ namespace PS_C_Sharp_Basic
         #endregion
 
         #region LoopingThruArray
+        
+        int[] array3 = new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
+
         public void LoopingThruArray()
         {
-            var array3 = new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
             foreach (var i in array3)
             {
                 Console.WriteLine(i);
             }
 
+            //reverse order starting from the last array element
             for (int i = array3.Length - 1; i >= 0; i--)
             {
                 Console.WriteLine(array3[i]);
             }
 
+            //reverse order starting from the first array element
             for (int i = 0; i <= array3.Length - 1; i++)
             {
                 var currentValue = array3[array3.Length - i - 1];
                 Console.WriteLine(currentValue);
             }
 
+            //calculating sum of array elements
             int sum = 0;
             foreach (var item in array3)
             {
@@ -117,24 +122,57 @@ namespace PS_C_Sharp_Basic
                 Console.WriteLine(item);
             }
 
+            //reverse order starting from the last array element
             for (int i = arrayList.Count - 1; i >= 0; i--)
             {
                 Console.WriteLine(arrayList[i]);
             }
 
+            //reverse order starting from the first array element
             for (int i = 0; i <= arrayList.Count - 1; i++)
             {
                 int currentValue = arrayList[arrayList.Count - i - 1];
                 Console.WriteLine(currentValue);
             }
 
+            //calculating sum of array elements
             int sum = 0;
             foreach (var item in arrayList)
             {
                 sum += item;
             }
             Console.WriteLine($"Sum is " + sum);
+
+            //adding int array into list array
+            var convertedArray = array3.ToList();
+            foreach (int item in convertedArray)
+            {
+                arrayList.Add(item);
+            }
+
+            //calculating sum after array was expanded
+            int sumModified = 0;
+            foreach (var item in arrayList)
+            {
+                sumModified += item;
+            }
+            Console.WriteLine($"Sum after array was modified is " + sumModified);
+
+            //checking calculation was correct
+            if (sumModified > 225)
+            {
+                Console.WriteLine("List was modified successfully!");
+            }
+            if (sumModified == sum)
+            {
+                Console.WriteLine("Something went wrong!");
+                arrayList.Clear();
+            }
+
+            //var slice = arrayList[9..];
         }
         #endregion
+
+        
     }
 }
