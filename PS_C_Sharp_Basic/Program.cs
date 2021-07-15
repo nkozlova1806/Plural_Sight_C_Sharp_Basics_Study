@@ -10,10 +10,22 @@ namespace PS_C_Sharp_Basic
             //blocks.BlocksAndStatementsMethod();
 
             //blocks.CreatingArrays();
-            
+
             //blocks.LoopingThruArray();
 
-            blocks.LoopingThruTheList();
+            //blocks.LoopingThruTheList();
+
+            blocks.ReturnEvenArrayElements();
+
+            blocks.CopyElementsOnCondition();
+
+            blocks.MaxArrayElement();
+
+            blocks.MinArrayElement();
+
+            blocks.SimilarArrayElements();
+
+            blocks.CalculateSimilarArrayElements();
         }
     }
 }

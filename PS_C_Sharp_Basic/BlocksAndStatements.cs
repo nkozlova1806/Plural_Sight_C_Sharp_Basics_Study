@@ -149,6 +149,16 @@ namespace PS_C_Sharp_Basic
             {
                 arrayList.Add(item);
             }
+            //OR
+            //foreach (int item in array3)
+            //{
+            //    arrayList.Add(item);
+            //}
+
+            foreach (var item in arrayList)
+            {
+                Console.WriteLine(item);
+            }
 
             //calculating sum after array was expanded
             int sumModified = 0;
@@ -168,11 +178,122 @@ namespace PS_C_Sharp_Basic
                 Console.WriteLine("Something went wrong!");
                 arrayList.Clear();
             }
-
-            //var slice = arrayList[9..];
         }
         #endregion
 
-        
+        #region Odd Elements
+        public void ReturnEvenArrayElements()
+        {
+            int[] array4 = new int[] { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
+            foreach (var item in array4)
+            {
+                if (item % 2 == 0)
+                {
+                    Console.WriteLine($"The even array element is " + item);
+                }
+            }
+        }
+        #endregion
+
+        #region Copy Elements From Array with condition
+        public void CopyElementsOnCondition()
+        {
+            int[] array5 = new int[] { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 };
+            var arrayListCopyTo = new List<int>();
+
+            foreach (var item in array5)
+            {
+                if (item > 10)
+                {
+                    arrayListCopyTo.Add(item);
+                }
+            }
+
+            foreach (var item in arrayListCopyTo)
+            {
+                Console.WriteLine($"This array element is > 10: " + item);
+            }
+        }
+        #endregion
+
+        #region Find Max Element in Array
+        public void MaxArrayElement()
+        {
+            int[] array6 = new int[] { 110,12,13,14,15,16,17,18,19,200 };
+            int maxValue = 0;
+
+            foreach (var item in array6)
+            {
+                if (item > maxValue)
+                {
+                    maxValue = item;
+                }
+            }
+            
+            Console.WriteLine($"This array element has max value: " + maxValue);
+        }
+        #endregion
+
+        #region Find Min Element in Array
+        public void MinArrayElement()
+        {
+            int[] array7 = new int[] { 11, 12, 13, 14, 15, 16, 17, 18, 19, 200 };
+            int minValue = array7[0];
+
+            for (int i = 0; i < array7.Length; i++)
+            {
+                if (array7[i] < minValue)
+                {
+                    minValue = array7[i];
+                }
+            }
+
+            Console.WriteLine($"This array element has min value: " + minValue);
+        }
+        #endregion
+
+        #region Find Similar Elements in Array
+        public void SimilarArrayElements()
+        {
+            int[] array8 = new int[] { 7, 12, 13, 17, 15, 16, 7, 18, 19, 27 };
+            var numberOf7s = 0;
+
+            foreach (var item in array8)
+            {
+                if (item == 7)
+                {
+                    numberOf7s++;
+                }
+            }
+
+            Console.WriteLine($"This is the number of 7 in array: " + numberOf7s);
+        }
+        #endregion
+
+        #region Calculate Similar Elements in Array
+        public void CalculateSimilarArrayElements()
+        {
+            int[] array9 = new int[] { 7, 12, 13, 17, 15, 16, 7, 18, 19, 7 };
+            var numberOf7s = 0;
+
+            foreach (var item in array9)
+            {
+                if (item == 7)
+                {
+                    numberOf7s++;
+                }
+            }
+
+            if (numberOf7s == 3)
+            {
+                Console.WriteLine($"Number of same values is 3!");
+            }
+            else
+            {
+                Console.WriteLine($"Number of same values is not 3!");
+            }
+            
+        }
+        #endregion
     }
 }
